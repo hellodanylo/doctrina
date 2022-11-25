@@ -1,0 +1,25 @@
+dependencies:
+  - ipython>=7.10
+  - ipykernel>=5
+  - ipywidgets>=7.6
+  - line_profiler>=2
+  # https://github.com/mwaskom/seaborn/issues/2194
+  - matplotlib=3.3.0
+  - nbformat>=4.2.0
+  - numpy>=1.15
+  - pandas>=1
+  - pip
+  - pyarrow>=0.11
+  - pymc3=3.11
+  - pytables
+  - python=3
+  - requests>=2
+  - scikit-learn>=0.21
+  - seaborn>=0.9
+  - pip:
+    - clize>=4
+    - dash
+    - empiricaldist==0.6.3
+    - plotly==5.7.0
+    - python-dotenv>=0.14.0
+    - pydevd-pycharm>=191.7141.48

@@ -1,0 +1,15 @@
+version: 0.2
+
+env:
+  shell: bash
+
+phases:
+  build:
+    commands:
+      - apt-get update -q && apt-get install -yq zsh
+      - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $DOCTRINA_REPO
+      - dev/ubuntu_setup.sh
+      - dev/python_setup.sh
+      - local/venv/bin/python dev/cli.py docker-build $DOCTRINA_IMAGE
+      - docker push $DOCTRINA_REPO:$DOCTRINA_IMAGE-latest
+ 

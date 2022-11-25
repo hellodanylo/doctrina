@@ -1,0 +1,5 @@
+ipython
+clize
+boto3
+docker
+python-dotenv

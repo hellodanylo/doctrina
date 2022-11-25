@@ -1,0 +1,26 @@
+channels:
+  - conda-forge
+dependencies:
+  - ipython
+  - ipykernel
+  - matplotlib
+  - numpy
+  - pandas
+  - pip
+  - python
+  - scikit-learn
+  - pytorch
+  - torchvision
+  - pip:
+    - boto3
+    - clize
+    - datasets
+    - diffusers
+    - ipywidgets
+    - mlflow
+    - plotly
+    - python-dotenv
+    - requests
+    - s3fs
+    - seaborn
+    - transformers
