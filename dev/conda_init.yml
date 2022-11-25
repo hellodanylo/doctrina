@@ -1,0 +1,14 @@
+name: base
+channels:
+  - conda-forge
+dependencies:
+  - ipython
+  - pip
+  - python=3.10
+  - pip:
+      - awscli
+      - clize
+      - boto3
+      - docker
+      - python-dotenv
+

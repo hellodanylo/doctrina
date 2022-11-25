@@ -1,0 +1,23 @@
+dependencies:
+  - ipython
+  - ipykernel
+  - line_profiler
+  # https://github.com/mwaskom/seaborn/issues/2194
+  - matplotlib>=3.3.2
+  - mlflow
+  - numpy
+  - opencv
+  - pandas
+  - pip
+  - pyarrow
+  - pytables
+  - python>=3.8
+  - pyqt
+  - requests
+  - scikit-learn
+  - seaborn
+  - xgboost==1.2.0
+  - pip:
+    - boto3
+    - clize
+    - python-dotenv

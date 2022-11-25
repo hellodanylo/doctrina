@@ -1,0 +1,24 @@
+dependencies:
+  - ipython>=7.10
+  - ipykernel>=5
+  - line_profiler>=2
+  # https://github.com/mwaskom/seaborn/issues/2194
+  - matplotlib=3.3.0
+  - mlflow>=1.11.0
+  - numpy>=1.15
+  - pandas>=1
+  - pip
+  - pyarrow>=0.11
+  - pyspark=3.1.1
+  - pytables
+  - python=3.8.5
+  - requests>=2
+  - s3fs
+  - scikit-learn>=0.21
+  - seaborn>=0.9
+  - xgboost==1.2.0
+  - pip:
+    - boto3>=1.9
+    - clize>=4
+    - python-dotenv>=0.14.0
+#    - pydevd-pycharm>=191.7141.48

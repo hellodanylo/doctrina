@@ -1,0 +1,17 @@
+local
+**/data
+**/__pycache__
+**/.ipynb_checkpoints
+**/*.csv
+**/*.npy
+**/*.json
+**/tf-logs
+**/tf_logs
+**/*.pickle
+**/*.h5
+**/*.swp
+.idea
+.aws
+**/.DS_Store
+dist
+*egg*
