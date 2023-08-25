@@ -1,7 +1,5 @@
 dependencies:
-  - cachetools
   - ffmpeg
-  - line_profiler
   - matplotlib
   - numpy
   - pandas
@@ -9,13 +7,11 @@ dependencies:
   - protobuf
   - pyarrow
   - python
-  - scikit-learn
-  - seaborn
-  - statsmodels
   - tensorflow=2.8.1=cuda*
   - pip:
     - awscli
     - boto3
+    - cachetools
     - ftfy
     - fiftyone
     - ipykernel
@@ -23,9 +19,13 @@ dependencies:
     - ipywidgets
     - kaggle
     - keras-tuner
+    - line_profiler
     - regex
     - requests
     - s3fs
+    - scikit-learn
+    - seaborn
+    - statsmodels
     - tensorflow-hub
     - tensorflow_addons
     - transformers
