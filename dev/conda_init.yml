@@ -1,3 +1,4 @@
+name: doctrina-dev
 channels:
   - conda-forge
 dependencies:

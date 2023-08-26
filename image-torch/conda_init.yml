@@ -1,6 +1,7 @@
 channels:
   - conda-forge
 dependencies:
+  - bitsandbytes
   - ipython
   - ipykernel
   - matplotlib
@@ -12,6 +13,7 @@ dependencies:
   - pytorch
   - torchvision
   - pip:
+    - accelerate
     - boto3
     - clize
     - datasets
@@ -23,4 +25,5 @@ dependencies:
     - requests
     - s3fs
     - seaborn
+    - tokenizers
     - transformers
