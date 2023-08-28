@@ -43,15 +43,16 @@ def conda_lock(image_name):
             "run",
             "--rm",
             "-it",
-            f"doctrina-{image_name}",
+            f"doctrina:{image_name}-latest",
             "conda",
             "env",
             "export",
+            "--no-build",
             "-n", image_name
         ], capture_output=True, check=True,
     )
     with open(f"{project_path}/image-{image_name}/conda_lock.yml", "w") as f:
-        f.write(proc.stdout.decode())
+        f.write(proc.stdout.decode().replace('\r\n', '\n'))
 
 
 def docker_build(

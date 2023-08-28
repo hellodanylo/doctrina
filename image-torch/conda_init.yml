@@ -2,6 +2,7 @@ channels:
   - conda-forge
 dependencies:
   - bitsandbytes
+  - cudatoolkit=11.2.2
   - ipython
   - ipykernel
   - matplotlib
@@ -22,6 +23,8 @@ dependencies:
     - mlflow
     - plotly
     - python-dotenv
+    # https://github.com/yaml/pyyaml/issues/724
+    - pyyaml>6.0.1
     - requests
     - s3fs
     - seaborn
