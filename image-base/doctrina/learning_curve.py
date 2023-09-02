@@ -85,7 +85,7 @@ class LearningCurve:
         scores = history.history
 
         loss = model.loss
-        metrics = [m.name for m in model.metrics]
+        metrics = [m.name for m in model.metrics[1:]]
 
         curve_columns = pd.MultiIndex.from_product([
             [loss] + metrics,
@@ -109,7 +109,9 @@ class LearningCurve:
             dataset.segments.keys(),
         ])
 
-        final_scores = pd.DataFrame(columns=final_columns)
+        final_scores = pd.Series(index=final_columns)
+        score_cols = [loss] + metrics
+
         for name, segment in dataset.segments.items():
             if reconstruction:
                 x = y = segment['x']
@@ -123,11 +125,11 @@ class LearningCurve:
             if not isinstance(scores, list):
                 scores = [scores]
 
-            final_scores.loc[:, ([loss] + metrics, name)] = [scores]
+            final_scores.loc[(score_cols, name)] = scores
 
         curve = LearningCurve()
         curve.learning_scores = learning_scores
-        curve.final_scores = final_scores
+        curve.final_scores = final_scores.to_frame().transpose()
 
         return curve
 
