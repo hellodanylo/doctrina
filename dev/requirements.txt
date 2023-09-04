@@ -3,3 +3,4 @@ clize
 boto3
 docker
 python-dotenv
+aws-cdk-lib

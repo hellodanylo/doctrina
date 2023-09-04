@@ -16,3 +16,4 @@ local
 dist
 *egg*
 cdk.out
+node_modules
