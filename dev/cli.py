@@ -62,6 +62,7 @@ def docker_build(
     user_name: str = 'user', 
     group_name: str = 'user',
     network: str = None,
+    no_docker_cache: bool = False,
 ):
     doctrina_repo = os.environ.get('DOCTRINA_REPO', 'doctrina')
     humus_repo = os.environ.get('HUMUS_REPO')
@@ -78,6 +79,7 @@ def docker_build(
                 '--build-arg', f'user_name={user_name}',
                 '--build-arg', f'group_name={group_name}',
                 *(["--network", network] if network is not None else []),
+                *(["--no-cache"] if no_docker_cache else []),
                 "-t",
                 f"{doctrina_repo}:{image_name}-latest",
                 f"{project_path}/image-{image_name}",
