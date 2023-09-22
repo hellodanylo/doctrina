@@ -3,7 +3,7 @@ channels:
   - pytorch
 dependencies:
   - bitsandbytes
-  - cudatoolkit=11.2.2
+  - cudatoolkit=11.8
   - ipython
   - ipykernel
   - matplotlib
