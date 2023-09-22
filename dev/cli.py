@@ -43,12 +43,12 @@ def conda_lock(image_name):
             "run",
             "--rm",
             "-it",
-            f"doctrina:{image_name}-latest",
+            f"{os.environ['DOCTRINA_REPO']}:{image_name}-latest",
             "conda",
             "env",
             "export",
             "--no-build",
-            "-n", image_name
+            "-n", image_name if image_name != 'base' else 'jupyter',
         ], capture_output=True, check=True,
     )
     with open(f"{project_path}/image-{image_name}/conda_lock.yml", "w") as f:

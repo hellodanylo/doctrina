@@ -3,8 +3,8 @@ FROM $DOCTRINA_REPO:base-latest
 
 ARG CONDA_ENV=mlflow
 ARG CONDA_FILE=conda_lock.yml
-COPY $CONDA_FILE ./conda.yml
-RUN conda env create -n $CONDA_ENV -f ./conda.yml
+COPY $CONDA_FILE $CONDA_PATH/conda_$CONDA_ENV.yml
+RUN conda env create -n $CONDA_ENV -f $CONDA_PATH/conda_$CONDA_ENV.yml
 
 WORKDIR /app
-RUN sudo zsh -c "echo conda activate mlflow >>~/.zshenv"
+ENV PATH="$CONDA_PATH/envs/$CONDA_ENV/bin:$PATH"

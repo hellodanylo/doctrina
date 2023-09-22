@@ -2,10 +2,10 @@ ARG DOCTRINA_REPO=doctrina
 FROM $DOCTRINA_REPO:base-latest
 
 ARG CONDA_FILE=conda_lock.yml
-COPY $CONDA_FILE ./conda.yml
+COPY $CONDA_FILE /app/conda/conda_torch.yml
 
-ENV CONDA_OVERRIDE_CUDA="11.2"
-RUN conda env create -n torch -f conda.yml
+ENV CONDA_OVERRIDE_CUDA="11.8"
+RUN conda env create -n torch -f /app/conda/conda_torch.yml
 
 WORKDIR /app
-ENV PATH="/app/miniconda/envs/torch/bin:$PATH"
+ENV PATH="/app/conda/envs/torch/bin:$PATH"

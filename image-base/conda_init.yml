@@ -1,14 +1,13 @@
 dependencies:
-  - ipython
-  - ipywidgets
-  - jupyterlab
-  - jupyter_console
-  - line_profiler
   - nodejs>=13
   - pip
   - python
   - pip:
+    - ipython
+    - ipywidgets
+    - jupyter_console
+    - jupyterlab
+    - jupyterlab-git
+    - jupyterlab-vim
     - jupyterlab_widgets
-    - jupyterlab-vim==0.14.5
-    - jupyterlab-git==0.33.0
-    - plotly==5.7.0
+    - plotly

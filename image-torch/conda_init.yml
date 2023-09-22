@@ -1,5 +1,6 @@
 channels:
   - conda-forge
+  - pytorch
 dependencies:
   - bitsandbytes
   - cudatoolkit=11.2.2
@@ -11,20 +12,20 @@ dependencies:
   - pip
   - python
   - scikit-learn
-  - pytorch
+  - pytorch<2
+  - torchaudio
   - torchvision
   - pip:
     - accelerate
     - boto3
     - clize
+    - cython<3.0.0
     - datasets
     - diffusers
     - ipywidgets
     - mlflow
     - plotly
     - python-dotenv
-    # https://github.com/yaml/pyyaml/issues/724
-    - pyyaml>6.0.1
     - requests
     - s3fs
     - seaborn
