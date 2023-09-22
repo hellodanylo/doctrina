@@ -2,8 +2,8 @@ ARG DOCTRINA_REPO=doctrina
 FROM $DOCTRINA_REPO:base-latest
 
 ARG CONDA_FILE=conda_lock.yml
-COPY $CONDA_FILE ./conda.yml
-RUN conda env create -n xgb -f conda.yml
+COPY $CONDA_FILE $CONDA_PATH/conda_xgb.yml
+RUN conda env create -n xgb -f $CONDA_PATH/conda_xgb.yml
 
 WORKDIR /app
-RUN sudo zsh -c "echo conda activate xgb >>~/.zshenv"
+ENV PATH="$CONDA_PATH/envs/xgb/bin:$PATH"

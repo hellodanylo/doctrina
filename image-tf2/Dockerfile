@@ -1,7 +1,9 @@
 ARG DOCTRINA_REPO=doctrina
 FROM $DOCTRINA_REPO:base-latest
 
-ENV CONDA_OVERRIDE_CUDA="11.8"
+# conda-forge does not have tensorflow for cuda>11.2 at the moment
+# https://anaconda.org/conda-forge/tensorflow/files
+ENV CONDA_OVERRIDE_CUDA="11.2"
 ARG CONDA_FILE=conda_lock.yml
 COPY $CONDA_FILE $CONDA_PATH/conda_tf2.yml
 RUN conda env create -n tf2 -f $CONDA_PATH/conda_tf2.yml

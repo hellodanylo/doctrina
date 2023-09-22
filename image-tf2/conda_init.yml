@@ -1,13 +1,11 @@
 dependencies:
-  - ffmpeg
-  - matplotlib
   - numpy
   - pandas
   - pip
   - protobuf
   - pyarrow
   - python
-  - tensorflow=2.8.1=cuda*
+  - tensorflow=2.12.*=cuda*
   - pip:
     - awscli
     - boto3
@@ -19,7 +17,7 @@ dependencies:
     - ipywidgets
     - kaggle
     - keras-tuner
-    - line_profiler
+    - matplotlib
     - regex
     - requests
     - s3fs
