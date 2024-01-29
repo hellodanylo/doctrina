@@ -1,12 +1,13 @@
 ARG HUMUS_REPO=ghcr.io/hellodanylo/humus
-FROM $HUMUS_REPO:main
+FROM $HUMUS_REPO:user-latest
 
 ENV DEBIAN_FRONTEND="noninteractive"
 ENV TZ="America/Los_Angeles"
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime
-RUN echo $TZ | tee -a /etc/timezone
+RUN sudo ln -snf /usr/share/zoneinfo/$TZ /etc/localtime
+RUN echo $TZ | sudo tee -a /etc/timezone
 
-RUN apt-get update -y && apt-get install -y \
+RUN sudo apt-get update -y && \
+    sudo apt-get install -y \
     build-essential \
     fontconfig \
     libncurses5-dev \
@@ -14,12 +15,6 @@ RUN apt-get update -y && apt-get install -y \
     cmake \
     >/dev/null
 
-ARG user_id=1000
-ARG user_name=user
-ARG group_id=1000
-ARG group_name=user
-
-RUN /opt/humus/create_user.sh $user_id $user_name $group_id $group_name
 USER $user_name
 
 WORKDIR /app
@@ -27,7 +22,7 @@ RUN sudo chown -R $user_name:$group_name /app
 
 ENV CONDA_PATH=/app/conda
 ARG CONDA_REPO=https://repo.anaconda.com/miniconda
-ARG CONDA_INSTALLER=Miniconda3-py311_23.5.2-0-Linux-x86_64.sh
+ARG CONDA_INSTALLER=Miniconda3-py311_23.11.0-2-Linux-x86_64.sh
 RUN wget -q $CONDA_REPO/$CONDA_INSTALLER
 RUN bash $CONDA_INSTALLER -b -p $CONDA_PATH && rm -rf $CONDA_INSTALLER
 

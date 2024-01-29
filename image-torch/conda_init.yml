@@ -1,33 +1,31 @@
 channels:
   - conda-forge
-  - pytorch
 dependencies:
-  - bitsandbytes
-  - cudatoolkit=11.8
-  - ipython
-  - ipykernel
-  - matplotlib
   - numpy
   - pandas
   - pip
-  - python
-  - scikit-learn
-  - pytorch<2
-  - torchaudio
-  - torchvision
+  - python=3.11
   - pip:
     - accelerate
+    - bitsandbytes
     - boto3
     - clize
-    - cython<3.0.0
+    - cython
     - datasets
     - diffusers
+    - ipython
+    - ipykernel
     - ipywidgets
+    - matplotlib
     - mlflow
     - plotly
+    - torch
+    - torchaudio
+    - torchvision
     - python-dotenv
     - requests
-    - s3fs
+    - sentencepiece
+    - scikit-learn
     - seaborn
     - tokenizers
     - transformers
