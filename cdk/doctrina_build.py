@@ -134,7 +134,8 @@ class DoctrinaBuildStack(Stack):
                 detail={
                     "action-type": ["PUSH"],
                     "result": ["SUCCESS"],
-                    "repository-name": [ecr_humus.repository_name]
+                    "repository-name": [ecr_humus.repository_name],
+                    "image-tag": ["user-latest"],
                 }
             ),
             targets=[et.CodePipeline(
