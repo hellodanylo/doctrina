@@ -22,9 +22,10 @@ RUN sudo chown -R $user_name:$group_name /app
 
 ENV CONDA_PATH=/app/conda
 ARG CONDA_REPO=https://repo.anaconda.com/miniconda
-ARG CONDA_INSTALLER=Miniconda3-py311_23.11.0-2-Linux-x86_64.sh
-RUN wget -q $CONDA_REPO/$CONDA_INSTALLER
-RUN bash $CONDA_INSTALLER -b -p $CONDA_PATH && rm -rf $CONDA_INSTALLER
+ARG CONDA_INSTALLER=Miniconda3-py311_24.7.1-0-Linux-x86_64.sh
+RUN wget -q $CONDA_REPO/$CONDA_INSTALLER && \
+    bash $CONDA_INSTALLER -b -p $CONDA_PATH \
+    && rm -rf $CONDA_INSTALLER
 
 # Non-interactive zsh will have access to miniconda.
 ENV PATH="$CONDA_PATH/bin:$PATH"
