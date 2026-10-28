@@ -5,5 +5,15 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "doctrina"
 version = "0.0.1"
-dependencies = [
-]
+description = "A library for ML experiments"
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Danylo Vashchilenko", email = "dan.vashchilenko@gmail.com" }]
+requires-python = ">=3.8"
+# Runtime dependencies (boto3, mlflow, pandas, joblib, ...) are provided by the images that use doctrina.
+dependencies = []
+
+# The package lives in image-base/doctrina (copied into the doctrina base image).
+[tool.setuptools]
+package-dir = { "" = "image-base" }
+packages = ["doctrina"]
